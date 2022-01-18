@@ -23,6 +23,7 @@
 </head>
 <body style="--tw-bg-opacity: 1; background-color: rgba(229, 231, 235, var(--tw-bg-opacity));">
     {{-- Navbar --}}
+    <p>Vishesh</p>
     <nav style="background-color:rgb(128,33,33)" class="navbar navbar-expand-lg sticky-top">
         <a class="navbar-brand font-weight-bold" href="{{ route('home') }}">KJSIEIT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
