@@ -1,0 +1,15 @@
+Admins:
+1. Adding a department input for seperating out admins and faculties
+2. Adding departments has to be done via backend
+3. Admins can add faculty/admins to their specific departments only
+4. Admins can create notices for their respective department only
+5. Admins can see all the users in view users page [2 seperate tables for admins and faculty]
+
+
+Faculty:
+1. 
+
+
+General:
+1. Thinking of giving each user the feature of changing password rather than giving it to only Admins
+2. 
