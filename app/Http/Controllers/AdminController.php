@@ -24,6 +24,9 @@ class AdminController extends Controller
     public function registerSpecificUsers(){
         return view('admin.registerSpecific');
     }
+    public function editAdminInfo(){
+        return view('admin.editAdminInfo');
+    }
 
     // public function editUserDetails(){
     //     $users = User::all()->where('department','=',auth()->user()->department);

@@ -12,10 +12,10 @@
                 <table class="table table-responsive">
                     <thead class="thead-dark">
                       <tr>
+                        <th>Sr no</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Department</th>
-                        <th>Edit Record</th>
                         <th>Delete Record</th>
                       </tr>
                     </thead>
@@ -27,33 +27,33 @@
                             <td>{{ $user->department }}</td>
                           </tr>      
                         @endforeach --}}
-                        <tr>
+                        <tr >
+                          <td>1</td>
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td><a href="" class="text-dark">Edit</a></td>
-                            <td><a href="" class="text-dark">Delete</a></td>
+                            <td class="text-center my-auto"> <button type="button" class="btn btn-danger btn-group-sm text-center">Delete</button></td>
                           </tr>      
                         <tr>
+                          <td>1</td>
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td><a href="" class="text-dark">Edit</a></td>
-                            <td><a href="" class="text-dark">Delete</a></td>
+                            <td class="text-center my-auto" > <button type="button" class="btn btn-danger">Delete</button></td>
                           </tr>      
                         <tr>
+                          <td>1</td>
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td><a href="" class="text-dark">Edit</a></td>
-                            <td><a href="" class="text-dark">Delete</a></td>
+                            <td class="text-center my-auto"> <button type="button " class="btn btn-danger">Delete</button></td>
                           </tr>      
                         <tr>
+                          <td>1</td>
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td><a href="" class="text-dark">Edit</a></td>
-                            <td><a href="" class="text-dark">Delete</a></td>
+                            <td class="text-center my-auto"> <button type="button" class="btn btn-danger">Delete</button></td>
                           </tr>      
                     </tbody>
                 </table>
