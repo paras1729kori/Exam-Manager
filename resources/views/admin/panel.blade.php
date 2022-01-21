@@ -17,7 +17,6 @@
             <a href="{{ route('addSubjects') }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">Add Subjects</a>
             <a href="{{ route('addLabs') }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">Add Labs</a>
             <a href="{{ route('externalFacultyDetails') }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">External Faculty Details</a>
-            <a href="{{ route('externalFacultyDetails') }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">Seating Arrangement</a>
           </div>
     </div>
         
