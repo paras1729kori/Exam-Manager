@@ -17,6 +17,7 @@ Route::get('/adminDashboard', [DashboardController::class, 'index'])->name('admi
 Route::get('/adminPanel', [AdminController::class, 'index'])->name('adminPanel');
 Route::get('/viewUsers', [AdminController::class, 'viewUsers'])->name('viewUsers');
 Route::get('/registerSpecificUsers', [AdminController::class, 'registerSpecificUsers'])->name('registerSpecificUsers');
+Route::get('/editAdminInfo', [AdminController::class, 'editAdminInfo'])->name('editAdminInfo');
 // Route::get('/editUserDetails', [AdminController::class, 'editUserDetails'])->name('editUserDetails');
 // Route::post('/updateUserDetails', [AdminController::class, 'updateUserDetails'])->name('updateUserDetails');
 Route::get('/createNotice', [AdminController::class, 'createNotice'])->name('createNotice');
