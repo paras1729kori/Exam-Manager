@@ -1,7 +1,6 @@
 @extends('layout.app')
 
 @section('content')
-
     <div class="d-flex flex-column align-items-center justify-content-center">
         <div class="bg-light px-5 w-100 py-3 text-center mb-2">
             <h3 class="font-weight-bold">Edit Admin Information</h3>
@@ -29,34 +28,8 @@
                     @enderror
                 </div>
 
-                <div class="mb-4">
-                    <label for="account_type" class="sr-only">Account Type</label>
-                    <select name="account_type" class="custom-select border border-dark">
-                        <option value="null">Select Account Type</option>
-                        <option value="0">Faculty</option>
-                        <option value="1">Admin</option>
-                      </select>
-                      @error('account_type')
-                        <div class="text-danger mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-
-                <div class="mb-4">
-                    <label for="department" class="sr-only">Department</label>
-                    <select name="department" class="custom-select border border-dark">
-                        <option value="{{ auth()->user()->department }}">{{ auth()->user()->department }}</option>
-                      </select>
-                      @error('department')
-                        <div class="text-danger mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-
                 <div>
-                    <button type="submit" style="background-color:rgb(128,33,33)" class="btn text-light font-weight-bold px-4 py-3 rounded w-100">Submit</button>
+                    <button type="submit" style="background-color:rgb(128,33,33)" class="btn text-light font-weight-bold px-4 py-3 rounded w-100">Update</button>
                 </div>
             </form>
         </div>

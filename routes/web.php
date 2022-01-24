@@ -27,7 +27,6 @@ Route::get('/editTermSchedule', [AdminController::class, 'editTermSchedule'])->n
 Route::get('/addSubjects', [AdminController::class, 'addSubjects'])->name('addSubjects');
 Route::get('/addLabs', [AdminController::class, 'addLabs'])->name('addLabs');
 Route::get('/externalFacultyDetails', [AdminController::class, 'externalFacultyDetails'])->name('externalFacultyDetails');
-Route::get('/oralPracticaltimetable', [AdminController::class, 'oralPracticaltimetable'])->name('oralPracticaltimetable');
 
 Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 

@@ -11,6 +11,11 @@
     <div class="mx-5 d-flex flex-column">
         <form>
             @csrf
+            <h3>Semester</h3>
+            <label class="sr-only" for="subID">ID Number</label>
+            <input type="number" class="form-control mb-2 mr-sm-2" name="subID" id="subID" placeholder="1">
+
+            <br>
             <h3>Subject Code</h3>
             <label class="sr-only" for="subID">ID Number</label>
             <input type="number" class="form-control mb-2 mr-sm-2" name="subID" id="subID" placeholder="202101">

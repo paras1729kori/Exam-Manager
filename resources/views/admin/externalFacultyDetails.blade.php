@@ -32,28 +32,28 @@
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td class="text-center my-auto"> <button type="button" class="btn btn-danger btn-group-sm text-center">Delete</button></td>
+                            <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
                           </tr>      
                         <tr>
                           <td>1</td>
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td class="text-center my-auto" > <button type="button" class="btn btn-danger">Delete</button></td>
+                            <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
                           </tr>      
                         <tr>
                           <td>1</td>
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td class="text-center my-auto"> <button type="button " class="btn btn-danger">Delete</button></td>
+                            <td class="text-center"><button type="button " class="btn btn-danger btn-sm">Delete</button></td>
                           </tr>      
                         <tr>
                           <td>1</td>
                             <td>Vishesh</td>
                             <td>vishesh.k@somksdf</td>
                             <td>Computer Science</td>
-                            <td class="text-center my-auto"> <button type="button" class="btn btn-danger">Delete</button></td>
+                            <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
                           </tr>      
                     </tbody>
                 </table>
