@@ -88,8 +88,8 @@ class AdminController extends Controller
     public function externalFacultyDetails(){
         return view('admin.externalFacultyDetails');
     }
-
-    public function seatingArrangement(){
-        return view('admin.seatingArrangement');
+  
+    public function oralPracticaltimetable(){
+        return view('admin.oralPracticaltimetable');
     }
 }

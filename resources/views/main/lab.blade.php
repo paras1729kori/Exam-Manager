@@ -9,7 +9,7 @@
 
         <div class="list-group w-50 text-center">
           @for ($i = 1; $i < 9; $i++)
-            <a href="#!" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">Semester {{ $i }}</a>
+            <a href="{{ route('oralPracticaltimetable') }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">Semester {{ $i }}</a>
           @endfor
           </div>
     </div>
