@@ -64,10 +64,10 @@
                     <select name="department" class="custom-select border border-dark">
                         <option value="null">Select Department</option>
                         <option value="Computer Engineering">Computer Engineering</option>
-                        <option value="Information Technology">Information Technology</option>
+                        {{-- <option value="Information Technology">Information Technology</option>
                         <option value="Electronics and Telecommunication">Electronics and Telecommunication</option>
                         <option value="Electronic Engineering">Electronic Engineering</option>
-                        <option value="Artificial Intelligence and Data Science">Artificial Intelligence and Data Science</option>
+                        <option value="Artificial Intelligence and Data Science">Artificial Intelligence and Data Science</option> --}}
                       </select>
                       @error('department')
                         <div class="text-danger mt-2 text-sm">

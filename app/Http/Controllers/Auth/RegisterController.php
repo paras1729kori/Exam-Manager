@@ -32,7 +32,6 @@ class RegisterController extends Controller
             'department'=>$request->department,
         ]);
 
-        Auth::attempt($request->only('email','password'));
-        return redirect()->route('home');
+        return redirect()->route('adminPanel');
     }
 }

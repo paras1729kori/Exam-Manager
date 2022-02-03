@@ -22,6 +22,7 @@
 
 </head>
 <body style="--tw-bg-opacity: 1; background-color: rgba(229, 231, 235, var(--tw-bg-opacity));">
+    {{-- <h1>hero</h1> --}}
     {{-- Navbar --}}
     <nav style="background-color:rgb(128,33,33)" class="navbar navbar-expand-lg sticky-top">
         <a class="navbar-brand font-weight-bold" href="{{ route('home') }}">KJSIEIT</a>
@@ -35,7 +36,7 @@
               <a class="nav-link font-weight-bold" href="{{ route('notice') }}">Notice Board</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="{{ route('lab') }}">Lab Exam</a>
+              <a class="nav-link font-weight-bold" href="{{ route('lab') }}">Oral/Practical</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link font-weight-bold" href="{{ route('term') }}">Term Exam</a>
@@ -45,6 +46,9 @@
           <ul class="navbar-nav ml-auto">
             @auth
               @if(auth()->user()->account_type == '1')
+                <li class="nav-item">
+                  <a href="{{ route('seatingArrangement') }}" class="nav-link font-weight-bold">Seating Arrangement</a>
+                </li>
                 <li class="nav-item">
                   <a href="{{ route('adminPanel') }}" class="nav-link font-weight-bold">Admin Panel</a>
                 </li>
@@ -58,7 +62,7 @@
 
               @if(auth()->user()->account_type == '0')
                 <li class="nav-item">
-                  <a href="{{ route('labExamScheduler') }}" class="nav-link font-weight-bold">Lab Exam Scheduler</a>
+                  <a href="{{ route('labExamScheduler') }}" class="nav-link font-weight-bold">Oral/Practical Scheduler</a>
                 </li>
                 {{-- <li class="nav-item">
                   <a href="#" class="nav-link font-weight-bold">Question Paper Portal</a>

@@ -5,10 +5,8 @@
     <div class="d-flex flex-column align-items-center justify-content-center">
         <div class="bg-light px-5 w-100 py-3 text-center mb-2">
             <h3 class="font-weight-bold">Users List</h3>
-            <small>Admins and Faculty members of all department</small>
+            <small>Admin and Faculty members</small>
         </div>
-
-        {{-- {{ $users }} --}}
 
         <div class="row">
             <div class="col-6">
@@ -53,7 +51,6 @@
                     </tbody>
                 </table>
             </div>
-            
         </div>
     </div>
 

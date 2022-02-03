@@ -9,34 +9,34 @@
     </div>
 
     <div class="mx-5 d-flex flex-column">
-        <form>
+        <form method="GET" action="{{ route('createLabSchedule') }}">
             @csrf
             <h3>Internal Faculty Details</h3>
             <label class="sr-only" for="factID">ID Number</label>
-            <input type="number" class="form-control mb-2 mr-sm-2" name="factID" id="factID" placeholder="202101">
+            <input type="number" class="form-control mb-2 mr-sm-2" name="factID" id="factID" placeholder="202101" required>
             
             <label class="sr-only" for="fname">First Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" name="fname" id="fname" placeholder="first name">
+            <input type="text" class="form-control mb-2 mr-sm-2" name="fname" id="fname" placeholder="first name" required>
 
             <label class="sr-only" for="lname">Last Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" name="lname" id="lname" placeholder="last name">
+            <input type="text" class="form-control mb-2 mr-sm-2" name="lname" id="lname" placeholder="last name" required>
         
             <br>
             <h3>External Faculty Details</h3>
             <label class="sr-only" for="exName">External Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" name="exName" id="exName" placeholder="External Name">
+            <input type="text" class="form-control mb-2 mr-sm-2" name="exName" id="exName" placeholder="External Name" required>
 
             <label class="sr-only" for="exCollege">External College/Institute</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" name="exCollege" id="exCollege" placeholder="External College/Institute">
+            <input type="text" class="form-control mb-2 mr-sm-2" name="exCollege" id="exCollege" placeholder="External College/Institute" required>
 
             <label class="sr-only" for="exExperience">External Experience</label>
-            <input type="number" class="form-control mb-2 mr-sm-2" name="exExperience" id="exExperience" placeholder="External Experience">
+            <input type="number" class="form-control mb-2 mr-sm-2" name="exExperience" id="exExperience" placeholder="External Experience" required>
 
             <label class="sr-only" for="exEmail">External Email</label>
-            <input type="email" class="form-control mb-2 mr-sm-2" name="exEmail" id="exEmail" placeholder="External Email">
+            <input type="email" class="form-control mb-2 mr-sm-2" name="exEmail" id="exEmail" placeholder="External Email" required>
 
             <label class="sr-only" for="exPhone">External Phone Number</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" name="exPhone" id="exPhone" placeholder="External Phone Number">
+            <input type="tel" class="form-control mb-2 mr-sm-2" name="exPhone" id="exPhone" placeholder="External Phone Number" required>
 
             <button type="submit" class="btn text-light font-weight-bold" style="background-color:rgb(128,33,33);">Submit</button>
             <button type="reset" class="btn text-light font-weight-bold" style="background-color:rgb(128,33,33);">Reset</button>

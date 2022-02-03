@@ -3,14 +3,31 @@
 @section('content')
 
     <div class="d-flex flex-column align-items-center justify-content-center">
-        <div class="bg-light px-5 w-100 py-3 text-center mb-2">
-            <h3 class="font-weight-bold">Admin Dashboard</h3>
+        <div class="bg-light px-5 w-100 py-3 text-center mb-4">
+            <div class="flex-row align-items-center justify-content-center">
+                
+                <h3 class="font-weight-bold">Admin Dashboard</h3>
+                <a href="{{ route('editAdminInfo') }}">
+                    <button type="button"  class="btn btn-sm btn-primary">Edit information</button>
+                </a>
+                    <button type="button" class="btn btn-sm btn-danger">Forget password</button>
+            </div>
         </div>
 
-        forgot password section
-        posted notices [Delete button]
-        name
-        department
+        <h5 class="font-weight-bold">Notices Published</h5>
+        <div class="row w-100 mt-1">
+            @foreach ($notices as $notice)
+            <div class="col-3">
+                <div class="card rounded-lg">
+                    <div class="card-body text-center">
+                        <a href="{{ route('displayNotice', [$notice->id]) }}" class="font-weight-bold text-dark w-100">{{ $notice->title }}</a>
+                        <br>
+                        <button type="button" class="btn btn-sm btn-danger m-2">Delete</button>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
     </div>
 
 @endsection
