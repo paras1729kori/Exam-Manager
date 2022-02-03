@@ -9,16 +9,16 @@
     </div>
 
     <div class="mx-5 d-flex flex-column">
-        <form>
+        <form action="{{ route('createLabInDB') }}" method="post">
             @csrf
             <h3>Semester</h3>
-            <label class="sr-only" for="subID">ID Number</label>
-            <input type="number" class="form-control mb-2 mr-sm-2" name="subID" id="subID" placeholder="1">
+            <label class="sr-only" for="sem">Semester</label>
+            <input type="number" class="form-control mb-2 mr-sm-2" name="sem" id="sem" placeholder="1">
 
             <br>
             <h3>Lab Code</h3>
-            <label class="sr-only" for="labID">ID Number</label>
-            <input type="number" class="form-control mb-2 mr-sm-2" name="labID" id="labID" placeholder="202101">
+            <label class="sr-only" for="labCode">Lab Code</label>
+            <input type="number" class="form-control mb-2 mr-sm-2" name="labCode" id="labCode" placeholder="20201">
         
             <br>
             <h3>Lab Name</h3>
@@ -47,23 +47,30 @@
                             <table class="table">
                                 <thead>
                                   <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Lab Code</th>
+                                    <th>Lab Name</th>
+                                    <th>Department</th>
+                                    <th>Delete</th>
                                   </tr>
                                 </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                  </tr>
-                                </tbody>
+                                @foreach ($labs as $lab)
+                                    @if ($lab->semester == $i)
+                                    <tbody>
+                                        <tr>
+                                          <td>{{ $lab->lab_code }}</td>
+                                          <td>{{ $lab->lab_name }}</td>
+                                          <td>{{ $lab->department}}</td>
+                                          <td>
+                                            <form action="{{ route('deleteLab', $lab) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    @endif    
+                                @endforeach
                             </table>
                         </div>
                     </div>

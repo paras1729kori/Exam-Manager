@@ -36,7 +36,7 @@
               <a class="nav-link font-weight-bold" href="{{ route('notice') }}">Notice Board</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="{{ route('lab') }}">Lab Exam</a>
+              <a class="nav-link font-weight-bold" href="{{ route('lab') }}">Oral/Practical</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link font-weight-bold" href="{{ route('term') }}">Term Exam</a>
@@ -62,7 +62,7 @@
 
               @if(auth()->user()->account_type == '0')
                 <li class="nav-item">
-                  <a href="{{ route('labExamScheduler') }}" class="nav-link font-weight-bold">Lab Exam Scheduler</a>
+                  <a href="{{ route('labExamScheduler') }}" class="nav-link font-weight-bold">Oral/Practical Scheduler</a>
                 </li>
                 {{-- <li class="nav-item">
                   <a href="#" class="nav-link font-weight-bold">Question Paper Portal</a>

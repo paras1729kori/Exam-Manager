@@ -9,16 +9,16 @@
     </div>
 
     <div class="mx-5 d-flex flex-column">
-        <form>
+        <form action="{{ route('createSubjectInDB') }}" method="post">
             @csrf
             <h3>Semester</h3>
-            <label class="sr-only" for="subID">ID Number</label>
-            <input type="number" class="form-control mb-2 mr-sm-2" name="subID" id="subID" placeholder="1">
+            <label class="sr-only" for="sem">Semester</label>
+            <input type="number" class="form-control mb-2 mr-sm-2" name="sem" id="sem" placeholder="1">
 
             <br>
             <h3>Subject Code</h3>
-            <label class="sr-only" for="subID">ID Number</label>
-            <input type="number" class="form-control mb-2 mr-sm-2" name="subID" id="subID" placeholder="202101">
+            <label class="sr-only" for="subCode">Subject Code</label>
+            <input type="number" class="form-control mb-2 mr-sm-2" name="subCode" id="subCode" placeholder="20201">
         
             <br>
             <h3>Subject Name</h3>
@@ -47,23 +47,30 @@
                             <table class="table">
                                 <thead>
                                   <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Subject Code</th>
+                                    <th>Subject Name</th>
+                                    <th>Department</th>
+                                    <th>Delete</th>
                                   </tr>
                                 </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                  </tr>
-                                </tbody>
+                                @foreach ($subjects as $subject)
+                                    @if ($subject->semester == $i)
+                                    <tbody>
+                                        <tr>
+                                          <td>{{ $subject->subject_code }}</td>
+                                          <td>{{ $subject->subject_name }}</td>
+                                          <td>{{ $subject->department}}</td>
+                                          <td>
+                                            <form action="{{ route('deleteSubject', $subject) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    @endif    
+                                @endforeach
                             </table>
                         </div>
                     </div>

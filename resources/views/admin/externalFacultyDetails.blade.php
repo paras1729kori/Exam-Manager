@@ -12,49 +12,25 @@
                 <table class="table table-responsive">
                     <thead class="thead-dark">
                       <tr>
-                        <th>Sr no</th>
                         <th>Name</th>
+                        <th>College</th>
                         <th>Email</th>
-                        <th>Department</th>
+                        <th>Phone No.</th>
+                        <th>Experience</th>
                         <th>Delete Record</th>
                       </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($userAdmins as $user)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->department }}</td>
-                          </tr>      
-                        @endforeach --}}
-                        <tr >
-                          <td>1</td>
-                            <td>Vishesh</td>
-                            <td>vishesh.k@somksdf</td>
-                            <td>Computer Science</td>
-                            <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-                          </tr>      
-                        <tr>
-                          <td>1</td>
-                            <td>Vishesh</td>
-                            <td>vishesh.k@somksdf</td>
-                            <td>Computer Science</td>
-                            <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-                          </tr>      
-                        <tr>
-                          <td>1</td>
-                            <td>Vishesh</td>
-                            <td>vishesh.k@somksdf</td>
-                            <td>Computer Science</td>
-                            <td class="text-center"><button type="button " class="btn btn-danger btn-sm">Delete</button></td>
-                          </tr>      
-                        <tr>
-                          <td>1</td>
-                            <td>Vishesh</td>
-                            <td>vishesh.k@somksdf</td>
-                            <td>Computer Science</td>
-                            <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-                          </tr>      
+                      @foreach ($externals as $external)
+                        <tr class="font-weight-bold">
+                          <td>{{ $external->fullname }}</td>
+                          <td>{{ $external->college }}</td>
+                          <td>{{ $external->exEmail }}</td>
+                          <td>{{ $external->phone_no }}</td>
+                          <td>{{ $external->experience }}</td>
+                          <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+                        </tr>  
+                      @endforeach
                     </tbody>
                 </table>
             </div>

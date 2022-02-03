@@ -7,25 +7,24 @@
             <h3 class="font-weight-bold">Notice Board</h3>
         </div>
 
-        <div class="row mb-5 text-center w-100">
-          <div class="col-6">
-            <h4>Computer Engineering</h4>
+        <div class="row mb-5 text-center">
+          <div class="col-12">
             @if ( count($CSnotices) > 0)
               @foreach ($CSnotices as $notice)
                 <a href="{{ route('displayNotice', [$notice->id]) }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">{{ $notice->title }}</a>
               @endforeach
             @else 
-              <p>No notices are posted</p>
+              <p>No notices posted yet</p>
             @endif
           </div>
-          <div class="col-6">
+          {{-- <div class="col-6">
             <h4>Information Technology</h4>
             @if ( count($ITnotices) > 0)
               @foreach ($ITnotices as $notice)
                 <a href="{{ route('displayNotice', [$notice->id]) }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">{{ $notice->title }}</a>
               @endforeach
             @else 
-              <p>No notices are posted</p>
+              <p>No notices posted yet</p>
             @endif
           </div>
         </div>
@@ -37,7 +36,7 @@
                 <a href="{{ route('displayNotice', [$notice->id]) }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">{{ $notice->title }}</a>
               @endforeach
             @else 
-              <p>No notices are posted</p>
+              <p>No notices posted yet</p>
             @endif
           </div>
           <div class="col-6">
@@ -47,7 +46,7 @@
                 <a href="{{ route('displayNotice', [$notice->id]) }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">{{ $notice->title }}</a>
               @endforeach
             @else 
-              <p>No notices are posted</p>
+              <p>No notices posted yet</p>
             @endif
           </div>
         </div>
@@ -59,10 +58,10 @@
                 <a href="{{ route('displayNotice', [$notice->id]) }}" class="list-group-item list-group-item-action p-3 font-weight-bold" style="color:rgb(128,33,33)">{{ $notice->title }}</a>
               @endforeach
             @else 
-              <p>No notices are posted</p>
+              <p>No notices posted yet</p>
             @endif
           </div>
-        </div>
+        </div> --}}
     </div>
         
 @endsection

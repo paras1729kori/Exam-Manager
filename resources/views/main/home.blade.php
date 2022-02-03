@@ -84,7 +84,7 @@
       <br><br>
       <p class="font-weight-bold">Guided By: <br> <a href="https://www.linkedin.com/in/shubhada-labde-b5433b126/" target="_blank">Prof. Shubhada Labde </a></p>
       <br>
-      <p class="font-weight-bold">Developed By: <br> <a href="https://www.linkedin.com/in/paras1729kori/" target="_blank">Paras Kori</a>, <a href="https://www.linkedin.com/in/vishesh-karan-6154701ab/" target="_blank">Vishesh Karan</a>, <a href="https://www.linkedin.com/in/shubham-shah-70880b227/" target="_blank">Shubham Shah</a></p>
+      <p class="font-weight-bold">Developed By: <br> <a href="https://www.linkedin.com/in/paras1729kori/" target="_blank">Paras Kori</a></p>
     </div>
     <div class="col-4 text-center">
       <img src="{{ asset('images/trust.jpg') }}" style="width:112px;height:83px;box-shadow:0 0 8px #000;" alt="">

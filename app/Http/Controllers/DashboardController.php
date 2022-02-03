@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\DepartmentNotices;
+use App\Models\OralTest;
+use App\Models\TermTest;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +14,8 @@ class DashboardController extends Controller
             return view('faculty.dashboard');
         } 
         else if (auth()->user()->account_type == '1'){
-            return view('admin.dashboard');
+            $notices = DepartmentNotices::all()->where('user_id','=',auth()->user()->id);
+            return view('admin.dashboard', compact(['notices']));
         }
     }
 
@@ -28,5 +31,17 @@ class DashboardController extends Controller
     public function displayNotice($id){
         $notice = DepartmentNotices::find($id);
         return view('notices.show', compact('notice'));
+    }
+
+    public function termTestTimeTable(Request $request){
+        $sem = $request->id;
+        $termTestDates = TermTest::all();
+        return view('main.termTestTimeTable',compact(['sem','termTestDates']));
+    }
+  
+    public function oralPracticalTimeTable(Request $request){
+        $sem = $request->id;
+        $oralTestDates = OralTest::all();
+        return view('main.oralPracticaltimetable',compact(['sem','oralTestDates']));
     }
 }

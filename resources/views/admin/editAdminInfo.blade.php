@@ -6,11 +6,11 @@
             <h3 class="font-weight-bold">Edit Admin Information</h3>
         </div>
         <div class="w-50">
-            <form action="{{ route('register') }}" method="post">
+            <form action="{{ route('updateAdminInfo') }}" method="post">
                 @csrf
                 <div class="mb-4 mt-2">
                     <label for="name" class="sr-only">Name</label>
-                    <input name="name" class="form-control w-100 rounded-lg border border-dark p-4" type="text" placeholder="Your Name" value="Vishesh karan">
+                    <input name="name" class="form-control w-100 rounded-lg border border-dark p-4" type="text" placeholder="New Name">
                     @error('name')
                         <div class="text-danger mt-2 text-sm">
                             {{ $message }}
@@ -20,7 +20,7 @@
 
                 <div class="mb-4">
                     <label for="email" class="sr-only">Email</label>
-                    <input name="email" class="form-control w-100 rounded-lg border border-dark p-4" type="email" placeholder="test@company.com" value="vishesh.k@somaiya.edu">
+                    <input name="email" class="form-control w-100 rounded-lg border border-dark p-4" type="email" placeholder="test@company.com">
                     @error('email')
                         <div class="text-danger mt-2 text-sm">
                             {{ $message }}
