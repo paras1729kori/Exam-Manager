@@ -7,7 +7,13 @@
     <title>Exam Manager</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ticker.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="{{ asset('js/downloadPDF.js') }}"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
     <script src="{{ asset('js/app.js') }}"></script>
 
     <style>
@@ -21,9 +27,7 @@
     </style>
 
 </head>
-<body style="--tw-bg-opacity: 1; background-color: rgba(229, 231, 235, var(--tw-bg-opacity));">
-    {{-- <h1>hero</h1> --}}
-    {{-- Navbar --}}
+<body style="--tw-bg-opacity: 1; background-color: rgba(229, 231, 235, var(--tw-bg-opacity)); font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <nav style="background-color:rgb(128,33,33)" class="navbar navbar-expand-lg sticky-top">
         <a class="navbar-brand font-weight-bold" href="{{ route('home') }}">KJSIEIT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,6 +45,9 @@
             <li class="nav-item">
                 <a class="nav-link font-weight-bold" href="{{ route('term') }}">Term Exam</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" href="{{ route('about') }}">About Us</a>
+          </li>
           </ul>
           
           <ul class="navbar-nav ml-auto">
@@ -91,5 +98,6 @@
         </div>
       </nav>
     @yield('content')
+    @yield('ck-editor')
 </body>
 </html>

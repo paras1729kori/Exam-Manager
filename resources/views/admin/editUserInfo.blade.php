@@ -3,15 +3,15 @@
 @section('content')
     <div class="d-flex flex-column align-items-center justify-content-center">
         <div class="bg-light px-5 w-100 py-3 text-center mb-2">
-            <h3 class="font-weight-bold">Edit Admin Information</h3>
+            <h3 class="font-weight-bold">Edit Information</h3>
         </div>
         <div class="w-50">
             <form action="{{ route('updateAdminInfo') }}" method="post">
                 @csrf
                 <div class="mb-4 mt-2">
-                    <label for="name" class="sr-only">Name</label>
-                    <input name="name" class="form-control w-100 rounded-lg border border-dark p-4" type="text" placeholder="New Name">
-                    @error('name')
+                    <label for="newName" class="sr-only">Name</label>
+                    <input name="newName" class="form-control w-100 rounded-lg border border-dark p-4" type="text" placeholder="username">
+                    @error('newName')
                         <div class="text-danger mt-2 text-sm">
                             {{ $message }}
                         </div>
@@ -19,9 +19,9 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="email" class="sr-only">Email</label>
-                    <input name="email" class="form-control w-100 rounded-lg border border-dark p-4" type="email" placeholder="test@company.com">
-                    @error('email')
+                    <label for="password" class="sr-only">Password</label>
+                    <input name="password" class="form-control w-100 rounded-lg border border-dark p-4" type="password" placeholder="password" />
+                    @error('password')
                         <div class="text-danger mt-2 text-sm">
                             {{ $message }}
                         </div>

@@ -24,25 +24,34 @@ class FacultyController extends Controller
             'exPhone' => 'required|numeric',
         ]);
 
-        ExternalFaculty::create([
-            'fullname'=>$request->exName,
-            'experience'=>$request->exExperience,
-            'college'=>$request->exCollege,
-            'phone_no'=>$request->exPhone,
-            'exEmail'=>$request->exEmail,
-            'user_id'=>auth()->user()->id
-        ]);
-        Session::flash('success', 'External Faculty added successfully');
-
-        $subjects = Subject::all();
-        $oralDates = OralTest::all();
-        return view('faculty.createLabSchedule', compact(['subjects','oralDates']));
+        if(ExternalFaculty::where('exEmail','=',$request->exEmail)->exists()){
+            $subjects = Subject::all();
+            $oralDates = OralTest::all();
+            return view('faculty.createLabSchedule', compact(['subjects','oralDates']));
+        } 
+        else {
+            ExternalFaculty::create([
+                'fullname'=>$request->exName,
+                'experience'=>$request->exExperience,
+                'college'=>$request->exCollege,
+                'phone_no'=>$request->exPhone,
+                'exEmail'=>$request->exEmail,
+                'user_id'=>auth()->user()->id
+            ]);
+            Session::flash('success', 'External Faculty added successfully');
+    
+            $subjects = Subject::all();
+            $oralDates = OralTest::all();
+            return view('faculty.createLabSchedule', compact(['subjects','oralDates']));
+        }
     }
 
     public function storeLabInDB(Request $request){
         $this->validate($request, [
             'sem'=>'required',
-            'subName'=>'required',
+            'div'=>'required',
+            'batch'=>'required',
+            'subName'=>'required|not_in:none',
             'examDate'=>'required',
             'startTime'=>'required',
             'endTime'=>'required'
@@ -50,6 +59,8 @@ class FacultyController extends Controller
 
         OralTest::create([
             'semester'=>$request->sem,
+            'div'=>$request->div,
+            'batch'=>$request->batch,
             'subName'=>$request->subName,
             'examDate'=>$request->examDate,
             'startTime'=>$request->startTime,
