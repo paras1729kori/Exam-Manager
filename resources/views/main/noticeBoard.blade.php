@@ -2,6 +2,8 @@
 
 @section('content')
 
+    
+
     <div class="d-flex flex-column align-items-center justify-content-center mb-3">
         <div class="bg-light px-5 w-100 py-3 text-center mb-2">
             <h3 class="font-weight-bold">Notice Board</h3>

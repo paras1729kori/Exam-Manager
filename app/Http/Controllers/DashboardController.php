@@ -6,6 +6,10 @@ use App\Models\DepartmentNotices;
 use App\Models\OralTest;
 use App\Models\TermTest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Nette\Utils\Json;
+use PhpParser\Node\Expr\Cast\String_;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class DashboardController extends Controller
 {
@@ -35,13 +39,22 @@ class DashboardController extends Controller
 
     public function termTestTimeTable(Request $request){
         $sem = $request->id;
-        $termTestDates = TermTest::all();
-        return view('main.termTestTimeTable',compact(['sem','termTestDates']));
+        $termTestA = TermTest::all()->where('div','=','A');
+        $termTestB = TermTest::all()->where('div','=','B');
+        return view('main.termTestTimeTable',compact(['sem','termTestA','termTestB']));
     }
   
     public function oralPracticalTimeTable(Request $request){
         $sem = $request->id;
-        $oralTestDates = OralTest::all();
-        return view('main.oralPracticaltimetable',compact(['sem','oralTestDates']));
+        $oralTestA = OralTest::all()->where('div','=','A');
+        $oralTestB = OralTest::all()->where('div','=','B');
+        return view('main.oralPracticaltimetable',compact(['sem','oralTestA','oralTestB']));
+    }
+
+    public function downloadPDF(Request $request){
+        $sem = $request->id;
+        $oralA = $request->oralTestA;
+        $oralB = $request->oralTestB;
+        return view('main.downloadScreen', compact(['sem','oralA','oralB']));
     }
 }

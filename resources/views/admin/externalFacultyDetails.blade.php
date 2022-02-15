@@ -28,7 +28,11 @@
                           <td>{{ $external->exEmail }}</td>
                           <td>{{ $external->phone_no }}</td>
                           <td>{{ $external->experience }}</td>
-                          <td class="text-center"><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+                          <form action="{{ route('deleteExternal', $external) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <td class="text-center"><button type="submit" class="btn btn-danger btn-sm">Delete</button></td>                          
+                          </form>
                         </tr>  
                       @endforeach
                     </tbody>

@@ -11,13 +11,14 @@ use App\Models\Subjects;
 use App\Models\TermTest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
     
     public function __construct(){
-        $this->middleware(['auth'])->only(['delete']);
+        $this->middleware(['auth']);
     }
 
     public function index(){
@@ -36,15 +37,24 @@ class AdminController extends Controller
         return view('admin.registerSpecific');
     }
 
-    public function editAdminInfo(){
-        return view('admin.editAdminInfo');
+    public function editUserInfo(){
+        return view('admin.editUserInfo');
     }
 
     public function updateAdminInfo(Request $request){
         $this->validate($request, [
-            'name'=>'required',
-            'email'=>'required'
+            'newName'=>'required',
+            'password'=>'required'
         ]);
+
+        $hashedPassword = Hash::make($request->password);
+        User::where('id','=',auth()->user()->id)->update([
+            'name'=>$request->newName,
+            'password'=>$hashedPassword,
+        ]);
+
+        Session::flash('success', 'Details updated successfully');
+        return redirect()->route('adminDashboard');
     }
 
     // Notices Section
@@ -69,6 +79,18 @@ class AdminController extends Controller
         return redirect()->route('adminPanel');
     }
 
+    public function destroyNotices(DepartmentNotices $notice){
+        $notice->delete();
+        return back();
+    }
+
+
+    // Oral/Practical Section
+    public function destroyOralExam(OralTest $oral){
+        $oral->delete();
+        return back();
+    }
+
     
     // Term Test Section
     public function createTermSchedule(){
@@ -80,7 +102,9 @@ class AdminController extends Controller
     public function storeTermTesDate(Request $request){
         $this->validate($request, [
             'sem'=>'required',
-            'subName'=>'required',
+            'div'=>'required',
+            'batch'=>'required',
+            'subName'=>'required|not_in:none',
             'examDate'=>'required',
             'startTime'=>'required',
             'endTime'=>'required'
@@ -88,6 +112,8 @@ class AdminController extends Controller
 
         TermTest::create([
             'semester'=>$request->sem,
+            'div'=>$request->div,
+            'batch'=>$request->batch,
             'subName'=>$request->subName,
             'examDate'=>$request->examDate,
             'startTime'=>$request->startTime,
@@ -100,13 +126,12 @@ class AdminController extends Controller
     }
 
     public function destroyTermExam(TermTest $term){
-        $this->authorize('delete', $term);
         $term->delete();
         return back();
     }
 
 
-    // Lab Test Section
+    // Oral Test Section
     public function editLabSchedule(){
         $subjects = Subject::all();
         $oralDates = OralTest::all();
@@ -122,7 +147,7 @@ class AdminController extends Controller
 
     public function storeSubjects(Request $request){
         $this->validate($request, [
-            'sem'=>'required',
+            'sem'=>'required|not_in:1,2',
             'subCode'=>'required',
             'subName'=>'required|max:50'
         ]);
@@ -136,11 +161,10 @@ class AdminController extends Controller
         ]);
 
         Session::flash('success', 'Subject added successfully');
-        return redirect()->route('adminPanel');
+        return back();
     }
 
     public function destroySubject(Subject $subject){
-        $this->authorize('delete', $subject);
         $subject->delete();
         return back();
     }
@@ -154,7 +178,7 @@ class AdminController extends Controller
 
     public function storeLabs(Request $request){
         $this->validate($request, [
-            'sem'=>'required',
+            'sem'=>'required|not_in:1,2',
             'labCode'=>'required',
             'labName'=>'required|max:50'
         ]);
@@ -168,43 +192,31 @@ class AdminController extends Controller
         ]);
 
         Session::flash('success', 'Subject added successfully');
-        return redirect()->route('adminPanel');
+        return back();
     }
 
     public function destroyLab(Lab $lab){
-        $this->authorize('delete', $lab);
         $lab->delete();
         return back();
     }
 
+
+    // External Faculty Section
     public function externalFacultyDetails(){
         $externals = ExternalFaculty::all();
         return view('admin.externalFacultyDetails',compact(['externals']));
     }
 
+    public function destroyExternalDetails(ExternalFaculty $external){
+        $external->delete();
+        return back();
+    }
+
+
+    // Seating Arrangement Section
     public function seatingArrangement(){
         return view('seatingArrangement.seatingArrangement');
     }
+
+    
 }
-
-
-
-    // public function editUserDetails(){
-    //     $users = User::all()->where('department','=',auth()->user()->department);
-    //     return view('admin.editFacultyDetails', compact(['users']));
-    // }
-
-    // public function updateUserDetails(Request $request){
-    //     // dd($request);
-    //     $this->validate($request, [
-    //         'name' => 'required|max:255',
-    //         'password' => 'required|confirmed',
-    //         'account_type' => 'required|in:0,1',
-    //         'department' => 'required|not_in:null',
-    //     ]);
-
-    //     User::->update(['password','account_type','department']);
-        
-    //     Session::flash('success','Credentials Updated Successfully');
-    //     return redirect()->route('adminPanel');
-    // }

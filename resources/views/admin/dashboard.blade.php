@@ -7,10 +7,9 @@
             <div class="flex-row align-items-center justify-content-center">
                 
                 <h3 class="font-weight-bold">Admin Dashboard</h3>
-                <a href="{{ route('editAdminInfo') }}">
+                <a href="{{ route('editUserInfo') }}">
                     <button type="button"  class="btn btn-sm btn-primary">Edit information</button>
                 </a>
-                    <button type="button" class="btn btn-sm btn-danger">Forget password</button>
             </div>
         </div>
 
@@ -22,7 +21,11 @@
                     <div class="card-body text-center">
                         <a href="{{ route('displayNotice', [$notice->id]) }}" class="font-weight-bold text-dark w-100">{{ $notice->title }}</a>
                         <br>
-                        <button type="button" class="btn btn-sm btn-danger m-2">Delete</button>
+                        <form action="{{ route('deleteNotice', $notice) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-danger m-2">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>

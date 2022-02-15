@@ -1,98 +1,142 @@
-@extends('layout.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam Manager</title>
 
-@section('content')
-  <style>
-    p{
-      margin:0;
-      paddig:0;
-    }
-  </style>
-  <div class="container mt-4">
-    <div class="d-flex flex-column justify-content-center">
-      <h3><strong>About Somaiya Ayurvihar</strong></h3>
-      <p>Padmabhushan Shri Karamshi Jethabhai Somaiya founded Somaiya Vidyavihar an education trust in 1959, to provide quality holistic education. It was founded on the belief that, education is an important pillar of nation building with the power to change lives, and that it is the duty of the privileged to help provide it to whoever aspires to be educated. Somaiya Vidyavihar (SVV) encompasses 34 institutions, with more than 39,000 students and 1,500 faculty. Its educational institutes are spread across two main campuses - a 50 acre complex in Vidyavihar and a 28 acre complex in Sion both located in the heart of Mumbai besides a number of smaller campuses across rural Maharashtra, Karnataka and Gujarat. SVV offers Degree, Diploma & Certificate courses at Undergraduate, Post Graduate and Doctoral levels. Somaiya Vidyavihar also runs a few autonomous Post-Graduate Courses, Vocational Training Courses and High Schools. Somaiya Vidyavihar fosters an ecosystem that excels in education, research and service, a place where knowledge is preserved, disseminated and new knowledge is created. It is known as much for its Science, Technology, Medicine, Engineering, Management, Social Sciences and Commerce programs, as for its programs for academic studies in various Faiths and Cultures of India. Shri. Samir Somaiya, a Cornel University and Harvard Business School alumnus is the President of Somaiya Vidyavihar. For more details, visit <a style="color:maroon;" target="_blank" href="https://kjsieit.somaiya.edu">kjsieit.somaiya.edu/en</a></p>
-      <br>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ticker.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <style>
+        a {
+            color: white;
+        }
+        a:hover{
+            color:#c96d6d;
+            text-decoration: none;
+        }
+        .news {
+            width: 160px
+        }
+
+        .news-scroll a {
+            text-decoration: none
+        }
+
+        .dot {
+            height: 6px;
+            width: 6px;
+            margin-left: 3px;
+            margin-right: 3px;
+            margin-top: 2px !important;
+            background-color: rgb(207, 23, 23);
+            border-radius: 50%;
+            display: inline-block
+        }
+    </style>
+
+</head>
+<body style="--tw-bg-opacity: 1; background-color: white; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"">
+    <nav style="background-color:rgb(128,33,33)" class="navbar navbar-expand-lg sticky-top">
+        <a class="navbar-brand font-weight-bold" href="{{ route('home') }}">KJSIEIT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <img class="w-50" src="{{ asset('svg/ham.svg') }}" alt="Menu">
+        </button>
       
-      <h3><strong>About K. J. Somaiya Institute of Engineering and Information Technology, Sion</strong></h3>
-      <p>The K. J. Somaiya Institute of Engineering and Information Technology (KJSIEIT), was established by the Somaiya Trust in the year 2001 at Ayurvihar campus, Sion. The institute was set up primarily in response to the need for imparting quality education in the modern field of Information Technology and the allied branches of Engineering and Technology. The College is housed in a G+8 storeyed building and in International Standard of Riturang building with airy classrooms, hi-tech laboratories, auditorium, canteen, common rooms etc.</p>
-      <br>
-      
-      <h3><strong>Vision of the Institute</strong></h3>
-      <p>To emerge as a synonym of quality, excellence and commitment in the field of engineering education by unlocking potential, nurturing talent and transforming young minds to create future ready engineers.</p>
-      <br>
-      
-      <h3><strong>Mission of the Institute</strong></h3>
-      <ul>
-        <li>To provide students with a thorough knowledge of engineering to refine their professional skills.</li>
-        <li>To nurture creativity and innovation while encouraging multidisciplinary interaction.</li>
-        <li>To train students to be industry ready and capable of working effectively as an individual and in team.</li>
-        <li>To inculcate ethical behaviour, responsibility and commitment among students.</li>
-      </ul>
-      <br>
+        <div class="collapse navbar-collapse py-2" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" href="{{ route('notice') }}">Notice Board</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" href="{{ route('lab') }}">Oral/Practical</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" href="{{ route('term') }}">Term Exam</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" href="{{ route('about') }}">About Us</a>
+          </li>
+          </ul>
+          
+          <ul class="navbar-nav ml-auto">
+            @auth
+              @if(auth()->user()->account_type == '1')
+                <li class="nav-item">
+                  <a href="{{ route('seatingArrangement') }}" class="nav-link font-weight-bold">Seating Arrangement</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('adminPanel') }}" class="nav-link font-weight-bold">Admin Panel</a>
+                </li>
+                {{-- <li class="nav-item">
+                  <a href="#" class="nav-link font-weight-bold">Question Paper Portal</a>
+                </li> --}}
+                <li class="nav-item">
+                  <a href="{{ route('adminDashboard') }}" class="nav-link font-weight-bold">{{ auth()->user()->name }}</a>
+                </li>
+              @endif
 
-      <h3><strong>Quality Policy</strong></h3>
-      <ul>
-        <li>To conform to the requirements of regulatory authorities viz. AICTE, DTE and University of Mumbai.</li>
-        <li>To maintain transparency and fair practices in admission and recruitment processes.</li>
-        <li>To ensure continuous evaluation and examination process.</li>
-        <li>To ensure best academic ambience by providing high-end equipment in the laboratories, computers, learning resources and smart classrooms.</li>
-        <li>To ensure a safe and secure environment for all stakeholders.</li>
-        <li>To promote industry institute interaction, research & development, placements, technical, co-curricular and extracurricular activities.</li>
-      </ul>
-      <br>
+              @if(auth()->user()->account_type == '0')
+                <li class="nav-item">
+                  <a href="{{ route('labExamScheduler') }}" class="nav-link font-weight-bold">Oral/Practical Scheduler</a>
+                </li>
+                {{-- <li class="nav-item">
+                  <a href="#" class="nav-link font-weight-bold">Question Paper Portal</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a href="{{ route('facultyDashboard') }}" class="nav-link font-weight-bold">{{ auth()->user()->name }}</a>
+                </li>
+              @endif
+              
+              <li class="nav-item">
+                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                  @csrf
+                  <button class="mt-2 ml-2 font-weight-bold text-light p-0 btn" type="submit">Logout</button>
+              </form>
+              </li>
+            @endauth
+            @guest
+              <li class="nav-item">
+                <a href="{{ route('login') }}" class="nav-link font-weight-bold">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('register') }}" class="nav-link font-weight-bold">Register</a>
+              </li>
+            @endguest
+          </ul>
+        </div>
+      </nav>
 
-      <h3><strong>Objectives</strong></h3>
-      <ul>
-        <li>To focus on persistent improvement in processes related to teaching, learning and evaluation and to promote a culture of research and development among staff and students.</li>
-        <li>To develop technical and interpersonal skills so that the students translate knowledge into action contributing to the benefit of the society.</li>
-        <li>To enhance the learning experience of students by honing versatility through diverse activities.</li>
-      </ul>
+    {{-- Home Content --}}
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <img class="mt-5" src="{{ asset('images/home.jpg') }}" style="width:652px;" alt="KJSIEIT Logo">
+
+        <div class="w-100 mt-5 p-5" style="background-color:rgb(128,33,33)">
+            <div class="text-center text-light p-2 ">
+                <h1 class="font-weight-bold">Department of Computer Engineering</h1>
+                <h2 class="font-weight-bold">Exam Management System</h2>
+            </div>
+        </div>
+
+        {{-- news ticker --}}
+        <div class="w-100 mt-1">
+            <div class="d-flex justify-content-between align-items-center breaking-news bg-dark">
+                <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center py-2 text-white px-1 news" style="background: rgb(128,33,33)"><span class="d-flex align-items-center">Lastest Notice</span></div>
+                <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                    @foreach ($notices as $notice)
+                        <a class="mr-4" href="{{ route('displayNotice', [$notice->id]) }}">{{ $notice->title }}</a>
+                    @endforeach
+                </marquee>
+            </div>
+        </div>
     </div>
-  </div>
-
-  {{-- Footer --}}
-  <div class="row no-gutter mt-3 justify-content-center text-light py-5" style="margin:auto;background-color: rgb(0, 46, 98);">
-    <div class="col-4 text-center font-weight-bolder">
-      <img src="{{ asset('images/logo.jpg') }}" style="width:111px;height:111px;box-shadow:0 0 8px #000;" alt="">
-      <p class="mt-3">K.J. Somaiya Institute of Engineering and Infomation <br> Technology, Sion(East), Mumbai-400 022</p>
-      <p>91-22-24061408</p>
-      <p>91-22-24061403</p>
-      <p>info.tech@somaiya.edu</p>
-    </div>
-    <div class="col-4 text-center mt-5">
-      <!-- Facebook -->
-      <a target="_blank" href="https://www.facebook.com/kjsieitofficial" class="p-1">
-        <i class="fa fa-facebook-square fa-2x"> </i>
-      </a>
-       <!--Instagram-->
-       <a target="_blank" href="https://www.instagram.com/kjsieit_22/" class="p-1">
-        <i class="fa fa-instagram fa-2x"> </i>
-      </a>
-      <!-- Twitter -->
-      <a target="_blank" href="https://twitter.com/kjsieit1" class="p-1">
-        <i class="fa fa-twitter fa-2x"> </i>
-      </a>
-      <!--YouTube -->
-      <a target="_blank" href="https://www.youtube.com/kjsieitofficial" class="p-1">
-        <i class="fa fa-youtube fa-2x"> </i>
-      </a>
-      <!--Linkedin-->
-      <a target="_blank" href="https://www.linkedin.com/in/kjsieit" class="p-1">
-        <i class="fa fa-linkedin fa-2x"> </i>
-      </a>
-      <p class="mt-4"><strong>Prepared By <br> Department of Computer Engineering <br> 2022-23</strong></p>
-      <br><br>
-      <p class="font-weight-bold">Guided By: <br> <a href="https://www.linkedin.com/in/shubhada-labde-b5433b126/" target="_blank">Prof. Shubhada Labde </a></p>
-      <br>
-      <p class="font-weight-bold">Developed By: <br> <a href="https://www.linkedin.com/in/paras1729kori/" target="_blank">Paras Kori</a></p>
-    </div>
-    <div class="col-4 text-center">
-      <img src="{{ asset('images/trust.jpg') }}" style="width:112px;height:83px;box-shadow:0 0 8px #000;" alt="">
-      <p class="mt-3"><strong>Somaiya Ayurvihar Complex <br> Eastern Express Highway, <br> Near Everard Nagar, Sion(East),<br>Mumbai-400 022</strong></p>
-    </div>
-  </div>
-
-  
+</body>
+</html>
 
 
-@endsection
+

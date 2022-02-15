@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="row" style="padding: 0; margin: 0">
+    <div class="row mb-4" style="padding: 0; margin: 0">
         <div class="col-4">
             <div class="mx-5 d-flex">
                 <form action="{{ route('storeLabInDB') }}" method="post">
@@ -22,15 +22,30 @@
                     <h3>Select Semester</h3>
                     <label class="sr-only" for="sem">Semester</label>
                     <select class="custom-select mb-4 mr-sm-2" name="sem" id="sem">
-                        @for ($i = 1; $i < 9; $i++)
+                        @for ($i = 3; $i < 9; $i++)
                             <option value={{ $i }}>{{ $i }}</option>
                         @endfor
+                    </select>
+
+                    <h3>Select Division</h3>
+                    <label class="sr-only" for="div">Division</label>
+                    <select class="custom-select mb-4 mr-sm-2" name="div" id="div">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                    </select>
+
+                    <h3>Select Batch</h3>
+                    <label class="sr-only" for="batch">Batch</label>
+                    <select class="custom-select mb-4 mr-sm-2" name="batch" id="batch">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
                     </select>
         
                     <br>
                     <h3>Select Subject</h3>
                     <label class="sr-only" for="subName">Select Subject</label>
                     <select class="custom-select mb-4 mr-sm-2" name="subName" id="subName">
+                        <option value="none">Select an option</option>
                         @foreach ($subjects as $subject)
                             <option value="{{ $subject->subject_name }}">{{ $subject->subject_name }}</option>                        
                         @endforeach
@@ -60,7 +75,7 @@
         <div class="col-8 text-center">
             <div class="row">
                 <div class="col-12">
-                    @for ($i = 1; $i < 9; $i++)
+                    @for ($i = 3; $i < 9; $i++)
                     <h5 class="font-weight-bold text-center">Semester {{ $i }}</h5>
                     <table class="table table-bordered">
                         <thead class="thead-dark">
@@ -69,6 +84,8 @@
                             <th>Date</th>
                             <th>Start Time</th>
                             <th>End Time</th>
+                            <th>Division</th>
+                            <th>Batch</th>
                             <th>Delete</th>
                           </tr>
                         </thead>
@@ -80,8 +97,10 @@
                                     <td>{{ $oral->examDate }}</td>
                                     <td>{{ $oral->startTime}}</td>
                                     <td>{{ $oral->endTime}}</td>
+                                    <td>{{ $oral->div }}</td>
+                                    <td>{{ $oral->batch }}</td>
                                     <td>
-                                        <form action="{{ route('deleteTermExam', $oral) }}" method="post">
+                                        <form action="{{ route('deleteOralExam', $oral) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>

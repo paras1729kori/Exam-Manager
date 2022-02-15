@@ -23,15 +23,8 @@
                 <div class="mb-4">
                     <div class="form-group">
                         <label class="sr-only" for="body">Body</label>
-                        <pre><textarea class="form-control border border-dark" name="body" placeholder="Notice Body" rows="3"></textarea></pre>
+                        <textarea name="body" id="editor" placeholder="Notice Body"></textarea>
                     </div>
-                </div>
-
-                <div class="mb-4">
-                    <div class="custom-file border border-dark">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                      </div>
                 </div>
 
                 <div class="mb-4">
@@ -54,4 +47,15 @@
         
     </div>
 
+@endsection
+
+@section('ck-editor')
+<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection

@@ -11,6 +11,8 @@ class OralTest extends Model
 
     protected $fillable = [
         'semester',
+        'div',
+        'batch',
         'subName',
         'examDate',
         'startTime',

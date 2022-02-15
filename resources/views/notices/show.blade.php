@@ -7,13 +7,13 @@
             <h3 class="font-weight-bold">{{ $notice->title }}</h3>
         </div>
 
-        <div class="mx-5">
+        <div class="mx-5 w-50">
             <div class="card text-dark mx-5">
                 <div class="card-body">
                     <p class="card-text">
-                        {{ $notice->body }}
+                        {!! $notice->body !!}
                     </p>
-                    <small class="float-right">Written on {{$notice->created_at}} by {{$notice->user->name}}</small>
+                    <small style="color:rgb(128,33,33)" class="float-right">Written on {{$notice->created_at}} by {{$notice->user->name}}</small>
                 </div>
             </div>
         </div>

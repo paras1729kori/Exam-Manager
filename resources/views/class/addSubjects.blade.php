@@ -13,7 +13,12 @@
             @csrf
             <h3>Semester</h3>
             <label class="sr-only" for="sem">Semester</label>
-            <input type="number" class="form-control mb-2 mr-sm-2" name="sem" id="sem" placeholder="1">
+            <input type="number" class="form-control mb-2 mr-sm-2" name="sem" id="sem" placeholder="3">
+            @error('sem')
+                <div class="text-danger mt-2 text-sm">
+                    {{ $message }}
+                </div>
+            @enderror
 
             <br>
             <h3>Subject Code</h3>
@@ -32,7 +37,7 @@
 
     <div class="m-5">
         <div id="accordion" role="tablist">
-            @for ($i = 1; $i < 9; $i++)
+            @for ($i = 3; $i < 9; $i++)
                 <div class="card mt-1">
                     <div class="card-header" role="tab" id="heading{{ $i }}">
                         <h5 class="mb-0">
