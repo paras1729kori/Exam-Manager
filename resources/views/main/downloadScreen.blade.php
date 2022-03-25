@@ -39,10 +39,10 @@
                 </div>
                 <div class="col-10">
                     <div class="font-weight-bold">
-                        <p style="color:rgb(128,33,33)">SOMAIYA <br> VIDYAVIHAR</p>
-                        <p>K J Somaiya Institute of Engineering and Information Techbology</p>
-                        <p>An Autonomous Institute affiliated to University of Mumbai</p>
-                        <p>Accredited by NAAC and NBA, Approved by AICTE, New Delhi</p>
+                        <p class="m-0 p-0" style="color:rgb(128,33,33)">SOMAIYA <br> VIDYAVIHAR</p>
+                        <p class="m-0 p-0">K J Somaiya Institute of Engineering and Information Techbology</p>
+                        <p class="m-0 p-0">An Autonomous Institute affiliated to University of Mumbai</p>
+                        <p class="m-0 p-0">Accredited by NAAC and NBA, Approved by AICTE, New Delhi</p>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                                @foreach ($oralA as $oral)
+                                {{-- @foreach ($oralA as $oral)
                                     @if ($oral->semester == $sem)
                                         <tr class="text-center">
                                             <td>{{ $oral->subName }}</td>
@@ -79,7 +79,7 @@
                                             <td>{{ $oral->batch }}</td>
                                         </tr>
                                     @endif   
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -98,7 +98,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                                @foreach ($oralB as $oral)
+                                {{-- @foreach ($oralB as $oral)
                                     @if ($oral->semester == $sem)
                                         <tr class="text-center">
                                             <td>{{ $oral->subName }}</td>
@@ -109,7 +109,7 @@
                                             <td>{{ $oral->batch }}</td>
                                         </tr>
                                     @endif   
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>

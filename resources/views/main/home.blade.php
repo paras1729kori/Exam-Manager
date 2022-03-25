@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exam Manager</title>
+    <title>Exam Management System</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ticker.css') }}">
@@ -68,7 +68,7 @@
             @auth
               @if(auth()->user()->account_type == '1')
                 <li class="nav-item">
-                  <a href="{{ route('seatingArrangement') }}" class="nav-link font-weight-bold">Seating Arrangement</a>
+                  <a href="{{ route('examDocsPanel') }}" class="nav-link font-weight-bold">Exam Documents</a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ route('adminPanel') }}" class="nav-link font-weight-bold">Admin Panel</a>

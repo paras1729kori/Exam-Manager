@@ -44,6 +44,7 @@ Route::get('/editUserInfo', [AdminController::class, 'editUserInfo'])->name('edi
 Route::post('/updateAdminInfo', [AdminController::class, 'updateAdminInfo'])->name('updateAdminInfo');
 
 Route::get('/createNotice', [AdminController::class, 'createNotice'])->name('createNotice');
+Route::post('/image_upload', [AdminController::class, 'upload'])->name('upload');
 Route::post('/createNotice', [AdminController::class, 'storeNotice']);
 Route::delete('/deleteNotice/{notice}', [AdminController::class,'destroyNotices'])->name('deleteNotice');
 
@@ -64,6 +65,11 @@ Route::delete('/deleteTermExam/{term}', [AdminController::class,'destroyTermExam
 
 Route::get('/externalFacultyDetails', [AdminController::class, 'externalFacultyDetails'])->name('externalFacultyDetails');
 Route::delete('/deleteExternal/{external}', [AdminController::class,'destroyExternalDetails'])->name('deleteExternal');
+
+// Exam Documents Panel
+Route::get('/examDocsPanel', [AdminController::class, 'examDocsPanel'])->name('examDocsPanel');
+Route::get('/facultySuppCounter', [AdminController::class, 'facultySuppCounter'])->name('facultySuppCounter');
+Route::get('/blockDataDisplay', [AdminController::class, 'blockDataDisplay'])->name('blockDataDisplay');
 
 Route::get('/adminDashboard', [DashboardController::class, 'index'])->name('adminDashboard');
 Route::get('/adminPanel', [AdminController::class, 'index'])->name('adminPanel');

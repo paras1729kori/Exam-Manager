@@ -86,9 +86,9 @@
                 </table>
             </div>
         </div>
-        {{-- <form action="{{ route('downloadPDF') }}" method="GET">
+        <form action="{{ route('downloadPDF') }}" method="GET">
             <button type="submit" class="btn btn-info text-light">Print</button>
-        </form> --}}
+        </form>
     </div>
 
 @endsection

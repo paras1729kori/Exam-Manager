@@ -25,6 +25,25 @@ class AdminController extends Controller
         return view('admin.panel');
     }
 
+    public function examDocsPanel(){
+        return view('admin.examDocsPanel');
+    }
+
+    public function facultySuppCounter(){
+        $SYsubjects = Subject::all()->whereBetween('semester',array(3,4));
+        $TYsubjects = Subject::all()->whereBetween('semester',array(5,6));
+        $LYsubjects = Subject::all()->whereBetween('semester',array(7,8));
+        return view('admin.facultySuppCounter', compact(['SYsubjects']));
+    }
+
+    public function blockSuppCounter(){
+        return view('admin.blockSuppCounter');
+    }
+
+    public function blockDataDisplay(){
+        return view('admin.blockDataDisplay');
+    }
+
 
     // Admin Users Section
     public function viewUsers(){
@@ -62,7 +81,36 @@ class AdminController extends Controller
         return view('notices.create');
     }
 
+    public function upload(Request $request){
+        if($request->hasFile('upload')){
+            //get filename with extension
+            $filenamewithextension = $request->file('upload')->getClientOriginalName();
+    
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+    
+            //get file extension
+            $extension = $request->file('upload')->getClientOriginalExtension();
+    
+            //filename to store
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+    
+            //Upload File
+            $request->file('upload')->storeAs('public/uploads', $filenametostore);
+    
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('storage/uploads/'.$filenametostore); 
+            $msg = 'Image successfully uploaded'; 
+            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+            
+            // Render HTML output 
+            @header('Content-type: text/html; charset=utf-8'); 
+            echo $re;
+        }
+    }
+
     public function storeNotice(Request $request){
+        dd($request);
         $this->validate($request, [
             'title'=>'required|max:255',
             'body'=>'required',

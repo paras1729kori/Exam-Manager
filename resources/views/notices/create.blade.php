@@ -24,6 +24,13 @@
                     <div class="form-group">
                         <label class="sr-only" for="body">Body</label>
                         <textarea name="body" id="editor" placeholder="Notice Body"></textarea>
+
+                        <script>
+                            CKEDITOR.replace( 'description', {
+                                filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                                filebrowserUploadMethod: 'form'
+                            });
+                        </script>
                     </div>
                 </div>
 

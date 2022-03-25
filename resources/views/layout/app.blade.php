@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exam Manager</title>
+    <title>Exam Management System</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ticker.css') }}">
@@ -12,7 +12,6 @@
 
     <script src="{{ asset('js/downloadPDF.js') }}"></script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
     <script src="{{ asset('js/app.js') }}"></script>
 
@@ -23,6 +22,9 @@
         a:hover{
             color:#c96d6d;
             text-decoration: none;
+        }
+        table, th, tr, td {
+          border: 1px solid #000;
         }
     </style>
 
@@ -54,7 +56,7 @@
             @auth
               @if(auth()->user()->account_type == '1')
                 <li class="nav-item">
-                  <a href="{{ route('seatingArrangement') }}" class="nav-link font-weight-bold">Seating Arrangement</a>
+                  <a href="{{ route('examDocsPanel') }}" class="nav-link font-weight-bold">Exam Documents</a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ route('adminPanel') }}" class="nav-link font-weight-bold">Admin Panel</a>
