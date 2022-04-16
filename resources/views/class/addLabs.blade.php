@@ -49,7 +49,7 @@
                 
                     <div id="collapse{{ $i }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ $i }}">
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table table-sm">
                                 <thead>
                                   <tr>
                                     <th>Lab Code</th>

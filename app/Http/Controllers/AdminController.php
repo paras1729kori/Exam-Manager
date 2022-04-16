@@ -33,7 +33,7 @@ class AdminController extends Controller
         $SYsubjects = Subject::all()->whereBetween('semester',array(3,4));
         $TYsubjects = Subject::all()->whereBetween('semester',array(5,6));
         $LYsubjects = Subject::all()->whereBetween('semester',array(7,8));
-        return view('admin.facultySuppCounter', compact(['SYsubjects']));
+        return view('admin.facultySuppCounter', compact(['SYsubjects','TYsubjects','LYsubjects']));
     }
 
     public function blockSuppCounter(){

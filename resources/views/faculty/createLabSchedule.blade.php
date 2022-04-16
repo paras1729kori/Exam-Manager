@@ -77,7 +77,7 @@
                 <div class="col-12">
                     @for ($i = 3; $i < 9; $i++)
                     <h5 class="font-weight-bold text-center">Semester {{ $i }}</h5>
-                    <table class="table table-bordered">
+                    <table class="table table-sm table-bordered">
                         <thead class="thead-dark">
                           <tr>
                             <th>Subject</th>

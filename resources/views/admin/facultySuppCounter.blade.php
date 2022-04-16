@@ -42,8 +42,8 @@
                             <td>{{ $sub->subject_name }}</td>
                             <td>
                                 <select name="" id="">
-                                    @for ($i = 1; $i < 101; $i++)
-                                        <option>{{ $i }}</option>
+                                    @for ($i = 1; $i <= 25; $i++)
+                                        <option value={{ $i*2 }}>{{ $i*2 }}</option>
                                     @endfor
                                 </select>
                             </td>
@@ -56,14 +56,75 @@
 
                 {{-- Third Year Data --}}
                 <h5 class="font-weight-bold">TY Computer</h5>
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>Faculty Name</th>
+                        <th>Subject</th>
+                        <th>No. of Answer Sheets</th>
+                        <th>Date of Issue</th>
+                        <th>Date of Submission</th>
+                        <th>Signature</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($TYsubjects as $sub)
+                        <tr>
+                            <td><input type="text" name="" id=""></td>
+                            <td>{{ $sub->subject_name }}</td>
+                            <td>
+                                <select name="" id="">
+                                    @for ($i = 1; $i <= 25; $i++)
+                                        <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                                    @endfor
+                                </select>
+                            </td>
+                            <td><input type="date" name="" id=""></td>
+                            <td><input type="date" name="" id=""></td>
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
 
                 {{-- Last Year Data --}}
                 <h5 class="font-weight-bold">LY Computer</h5>
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>Faculty Name</th>
+                        <th>Subject</th>
+                        <th>No. of Answer Sheets</th>
+                        <th>Date of Issue</th>
+                        <th>Date of Submission</th>
+                        <th>Signature</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($LYsubjects as $sub)
+                        <tr>
+                            <td><input type="text" name="" id=""></td>
+                            <td>{{ $sub->subject_name }}</td>
+                            <td>
+                                <select name="" id="">
+                                    @for ($i = 1; $i <= 25; $i++)
+                                        <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                                    @endfor
+                                </select>
+                            </td>
+                            <td><input type="date" name="" id=""></td>
+                            <td><input type="date" name="" id=""></td>
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
             </div>
+
+            <br>
+            <br>
     
-            <div class="row my-3 text-center">
+            <div class="row mt-5 mb-3 text-center">
                 <div class="col-6">
-                    <p class="m-0 p-0 font-weight-bold">Prof. Nilambari Joshi <br> Term Test Co-Coordinator</p>
+                    <p class="m-0 p-0 font-weight-bold">Test Coordinator</p>
                 </div>
                 <div class="col-6">
                     <p class="m-0 p-0 font-weight-bold">Dr. Sarita Ambadekar <br> HOD Computer Engineering Dept</p>
@@ -71,8 +132,8 @@
             </div>
         </div>
     </div>
-    <div class="text-center my-3">
-        <button id="generatePDF" class="btn btn-primary">Download</button>
-    </div>
+    {{-- <div class="text-center my-3">
+        <a href="{{ route('makePDF') }}" id="generatePDF" class="btn btn-primary">Download</a>
+    </div> --}}
         
 @endsection

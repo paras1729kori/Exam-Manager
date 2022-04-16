@@ -34,13 +34,16 @@
                 <h5 class="font-weight-bold">LY Answer Sheets</h5>
                 @include('layout.blockAnsTables')
             </div>
+
+            <br>
+            <br>
     
-            <div class="row my-3 text-center">
+            <div class="row mt-5 mb-3 text-center">
                 <div class="col-4">
-                    <p class="m-0 p-0 font-weight-bold">Ms. Shubhda Labde <br> Test Co-Coordinator</p>
+                    <p class="m-0 p-0 font-weight-bold">Test Co-Coordinator</p>
                 </div>
                 <div class="col-4">
-                    <p class="m-0 p-0 font-weight-bold">Ms. Bhagyashree Madan <br> Test Co-Coordinator</p>
+                    <p class="m-0 p-0 font-weight-bold">Test Co-Coordinator</p>
                 </div>
                 <div class="col-4">
                     <p class="m-0 p-0 font-weight-bold">Dr. Sarita Ambadekar <br> HOD Computer Engineering Dept</p>
@@ -48,8 +51,8 @@
             </div>
         </div>
     </div>
-    <div class="text-center my-3">
+    {{-- <div class="text-center my-3">
         <button id="generatePDF" class="btn btn-primary">Download</button>
-    </div>
+    </div> --}}
         
 @endsection

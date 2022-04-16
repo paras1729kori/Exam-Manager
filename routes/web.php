@@ -27,7 +27,6 @@ Route::get('/termTestTimeTable/{id}', [DashboardController::class, 'termTestTime
 // Download PDF
 Route::get('/downlaodPDF', [DashboardController::class,'downloadPDF'])->name('downloadPDF');
 
-
 // Faculty Routes
 Route::get('/labExamScheduler', [FacultyController::class, 'index'])->name('labExamScheduler');
 Route::get('/createLabSchedule', [FacultyController::class, 'createLabSchedule'])->name('createLabSchedule');

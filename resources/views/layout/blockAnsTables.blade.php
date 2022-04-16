@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12">
-        <table class="table table-responsive">
+        <table class="table table-sm table-responsive">
             <thead class="thead-dark">
                 <th>Time</th>
                 <th colspan="4"><input type="date" name="" id=""></th>
@@ -34,50 +34,22 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 12; $i++)
-                                <option>CR {{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
@@ -90,22 +62,50 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i < 12; $i++)
+                                <option>CR {{ $i }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
@@ -120,50 +120,22 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 12; $i++)
-                                <option>CR {{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
-                            @endfor
-                        </select>
-                    </td>
-                    <td>
-                        <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
@@ -176,22 +148,50 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i < 12; $i++)
+                                <option>CR {{ $i }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
+                            @endfor
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
@@ -207,22 +207,22 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
@@ -235,22 +235,22 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
@@ -265,22 +265,22 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
@@ -293,22 +293,22 @@
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>
                     <td>
                         <select name="" id="">
-                            @for ($i = 1; $i < 100; $i++)
-                                <option value={{ $i }}>{{ $i }}</option>
+                            @for ($i = 1; $i <= 50; $i++)
+                                <option value={{ $i*2 }}>{{ $i*2 }}</option>
                             @endfor
                         </select>
                     </td>

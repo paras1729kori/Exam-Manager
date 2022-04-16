@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
                       @foreach ($externals as $external)
-                        <tr class="font-weight-bold">
+                        <tr>
                           <td>{{ $external->fullname }}</td>
                           <td>{{ $external->college }}</td>
                           <td>{{ $external->exEmail }}</td>
